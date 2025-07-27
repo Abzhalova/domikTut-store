@@ -1,0 +1,32 @@
+#request {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .request {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    h1 {
+      font-weight: 800;
+      font-size: 46px;
+      line-height: 150%;
+    }
+    p {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 160%;
+    }
+    button {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 150%;
+      color: white;
+      padding: 10px 30px;
+      border-radius: 100px;
+      background: #f4683f;
+    }
+  }
+}

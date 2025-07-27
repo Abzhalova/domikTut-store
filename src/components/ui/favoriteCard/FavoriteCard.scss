@@ -1,0 +1,94 @@
+.card {
+  background: #fff;
+  border-radius: 30px;
+  overflow: hidden;
+  max-width: 400px;
+  height: 530px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.277);
+  &__image {
+    position: relative;
+    img {
+      width: 400px;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+    .card__capacity {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: white;
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 500;
+    }
+
+    .card__like {
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+      background: white;
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+  &__content {
+    padding: 20px;
+  }
+  &__title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 36px;
+  }
+  &__features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #5a5d6c;
+      font-weight: 500;
+      svg {
+        color: #f4683f;
+      }
+    }
+  }
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__price {
+    font-size: 16px;
+
+    strong {
+      font-weight: 700;
+    }
+  }
+  &__link {
+    color: #f4683f;
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

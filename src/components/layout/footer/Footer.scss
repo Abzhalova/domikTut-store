@@ -1,0 +1,21 @@
+#footer {
+  padding: 40px 0;
+  background: #161723;
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    a {
+      font-size: 20px;
+      color: white;
+    }
+    &--icons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      a {
+        font-size: 30px;
+      }
+    }
+  }
+}

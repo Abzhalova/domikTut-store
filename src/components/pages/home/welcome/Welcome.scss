@@ -1,0 +1,134 @@
+#welcome {
+  min-height: 85vh;
+  padding: 70px 0 30px 0;
+  .welcome {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &--left {
+      width: 45%;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      h1 {
+        font-weight: 800;
+        font-size: 60px;
+        line-height: 140%;
+        letter-spacing: 2%;
+      }
+      p {
+        font-weight: 600;
+        font-size: 25px;
+        line-height: 150%;
+      }
+      &__category {
+        margin-left: 10px;
+        &--card {
+          cursor: pointer;
+          h4 {
+            margin-top: 10px;
+            margin-left: 34px;
+            font-weight: 400;
+            font-size: 17px;
+            line-height: 150%;
+          }
+        }
+      }
+      &__icons {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        a {
+          font-size: 30px;
+          color: white;
+        }
+      }
+    }
+
+    .booking-filter {
+      background: #fff;
+      border-radius: 30px;
+      padding: 30px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      font-family: sans-serif;
+
+      &__field {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        label {
+          font-weight: 600;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+          padding: 14px 20px;
+          border-radius: 50px;
+          border: 1px solid #ccc;
+          font-size: 16px;
+          outline: none;
+          transition: 0.3s;
+
+          &:focus {
+            border-color: #f4683f;
+          }
+        }
+      }
+
+      &__range {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        input[type="range"] {
+          -webkit-appearance: none;
+          height: 4px;
+          background: #ddd;
+          border-radius: 4px;
+          outline: none;
+          margin: 0;
+          padding: 0;
+
+          &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            background: #f4683f;
+            border-radius: 50%;
+            cursor: pointer;
+            margin-top: -6px;
+          }
+        }
+
+        &-labels {
+          display: flex;
+          justify-content: space-between;
+          font-weight: 600;
+        }
+      }
+
+      &__submit {
+        background: #f4683f;
+        color: white;
+        font-size: 18px;
+        font-weight: 600;
+        border: none;
+        padding: 16px 0;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+          background: #d4552b;
+        }
+      }
+    }
+  }
+}

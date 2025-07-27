@@ -1,0 +1,12 @@
+#favorite {
+  padding: 40px 0;
+  h1 {
+    margin-bottom: 40px;
+  }
+  .favorite {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 80px;
+  }
+}
