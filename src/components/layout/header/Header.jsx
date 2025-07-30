@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
 import "./Header.scss";
 import logo from "../../../assets/images/logo.svg";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -6,9 +7,28 @@ import { CiHeart } from "react-icons/ci";
 import { GoSearch } from "react-icons/go";
 import { CiUser } from "react-icons/ci";
 import { MdOutlineAdminPanelSettings } from "react-icons/md";
+import { useDispatch, useSelector } from "react-redux";
+import { getUser } from "../../../toolkit/personDataSlice";
+import { auth } from "../../../fireBase";
+import { onAuthStateChanged } from "firebase/auth";
+import { useAuth } from "../../../context/AuthContext";
 
 const Header = () => {
+  const dispatch = useDispatch();
+  const { logOut } = useAuth(); 
   const nav = useNavigate();
+  const { user } = useSelector((s) => s.userReducer);
+
+  const getDataUser = async () => {
+    return onAuthStateChanged(auth, (data) => {
+      return dispatch(getUser(data));
+    });
+  };
+
+  useEffect(() => {
+    getDataUser();
+  }, []);
+
   return (
     <header id="header">
       <div className="container">
@@ -37,6 +57,21 @@ const Header = () => {
             </a>
           </div>
         </div>
+        {user?.providerData?.length > 0 &&
+          user.providerData.map((el, idx) => (
+            <div className="person" key={idx}>
+              <img
+                src={
+                  el.photoURL
+                    ? el.photoURL
+                    : "https://cdn-icons-png.flaticon.com/512/7381/7381253.png"
+                }
+                alt="img"
+              />
+              <h3>{el.displayName ? el.displayName.split(" ")[0] : "user"}</h3>
+              <button onClick={() => logOut()}>х</button>
+            </div>
+          ))}
       </div>
     </header>
   );
