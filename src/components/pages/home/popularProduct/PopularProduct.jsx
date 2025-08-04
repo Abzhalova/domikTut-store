@@ -1,17 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./PopularProduct.scss";
-import productImg from "../../../../assets/images/product.png";
 import ProductCard from "../../../ui/productCard/ProductCard";
 import axios from "axios";
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getAllProduct } from "../../../../toolkit/productAllSlice";
-import { useSelector } from "react-redux";
 
 const PopularProduct = () => {
   const dispatch = useDispatch();
-
-  const { product } = useSelector((s) => s.domikReducer);
+  const { products } = useSelector((s) => s.domikReducer);
 
   async function getProduct() {
     let res = await axios.get(
@@ -30,7 +26,7 @@ const PopularProduct = () => {
       <div className="container">
         <h1>Популярное в каталоге</h1>
         <div className="popular">
-          {product.map((el) => (
+          {products.map((el) => (
             <ProductCard el={el} key={el._id} />
           ))}
         </div>

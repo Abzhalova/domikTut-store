@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  product: [],
+  products: [],
 };
 
 export const domikSlice = createSlice({
@@ -9,7 +9,7 @@ export const domikSlice = createSlice({
   initialState,
   reducers: {
     getAllProduct(state, action) {
-      state.product = action.payload;
+      state.products = action.payload;
     },
   },
 });
