@@ -1,5 +1,7 @@
 import React from "react";
-import "./favoriteCard.scss";
+// import "./favoriteCard.scss";
+import "./FavoriteCard.scss";
+
 import {
   FaBed,
   FaTableTennis,
