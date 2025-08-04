@@ -1,7 +1,8 @@
 import React from "react";
 import "./Favorite.scss";
 import { useDispatch, useSelector } from "react-redux";
-import FavoriteCard from "../../ui/favoriteCard/favoriteCard";
+// import FavoriteCard from "../../ui/favoriteCard/favoriteCard";
+import FavoriteCard from "../../ui/favoriteCard/FavoriteCard";
 
 const Favorite = () => {
   const favorite = useSelector((s) => s.favoriteReducer.favorite);
